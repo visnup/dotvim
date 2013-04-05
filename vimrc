@@ -38,6 +38,7 @@ nnoremap <Leader>a :Ack<space>
 nnoremap <Leader>t :CtrlP<CR>
 nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>n :w<CR>:cn<CR>
+nnoremap <Leader>N :w<CR>:cN<CR>
 
 vmap <D-[> <gv
 vmap <D-]> >gv
@@ -91,3 +92,6 @@ autocmd BufReadPost *
 
 " http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
 autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
+
+" Auto-open quickfix window after any grep
+autocmd QuickFixCmdPost *grep* cwindow
