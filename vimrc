@@ -38,7 +38,7 @@ nnoremap <Leader>a :Ack<space>
 nnoremap <Leader>t :CtrlP<CR>
 nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>n :w<CR>:cn<CR>
-nnoremap <Leader>N :w<CR>:cN<CR>
+nnoremap <Leader>p :w<CR>:cN<CR>
 
 vmap <D-[> <gv
 vmap <D-]> >gv
