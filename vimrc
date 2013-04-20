@@ -78,6 +78,7 @@ filetype plugin indent on
 " filetype aliases
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd BufNewFile,BufRead *.skim set filetype=slim
+autocmd BufNewFile,BufRead *.emblem set filetype=slim
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
