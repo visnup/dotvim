@@ -22,8 +22,11 @@ set ignorecase      " ignore case while searching
 set smartcase       " ...unless query has uppercase in it
 set hlsearch        " highlight search terms
 
-autocmd FocusLost * silent! wa  " write files on defocus
-set autoread                    " re-read files on focus
+set splitright      " split things to the right
+let g:netrw_altv = 2
+
+autocmd FocusLost * silent! wa        " write files on defocus
+set autoread                          " re-read files on focus
 
 set showcmd                           " display incomplete commands
 set wildmode=list:longest,list:full   " ex tab completion
@@ -31,7 +34,6 @@ set wildignore+=*.o,*.obj,*.rbc,.git  ",vendor/ruby/**,node_modules/**
 
 let mapleader = ','
 
-let g:netrw_altv = 'spl'
 let g:ctrlp_custom_ignore = 'vendor/ruby\|node_modules|tmp'
 
 " Don't use Ex mode, use Q for formatting
