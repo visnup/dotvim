@@ -81,7 +81,7 @@ endif
 syntax on
 filetype plugin indent on
 
-" filetype aliases
+" Filetype aliases
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd BufNewFile,BufRead *.skim set filetype=slim
 autocmd BufNewFile,BufRead *.emblem set filetype=slim
