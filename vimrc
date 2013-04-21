@@ -5,53 +5,57 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " allow backspacing over everything
+set ruler                       " show the cursor position all the time
 
 set nobackup        " do not keep a backup file, use versions instead
 set history=50      " keep 50 lines of command line history
-set ruler           " show the cursor position all the time
-set showcmd         " display incomplete commands
-set expandtab       " expand tabs to spaces
-set shiftwidth=2    " indent by 2 spaces
-set tabstop=2       " tab by 2 spaces
-set ignorecase      " ignore case while searching
-set smartcase       " ...unless query has uppercase in it
-set hlsearch        " highlight search terms
-set autoread        " re-read files on focus
 set undofile
 set undodir=~/.vim/tmp
 set dir=~/.vim/tmp
+
+set expandtab       " expand tabs to spaces
+set shiftwidth=2    " indent by 2 spaces
+set tabstop=2       " tab by 2 spaces
+
+set ignorecase      " ignore case while searching
+set smartcase       " ...unless query has uppercase in it
+set hlsearch        " highlight search terms
+
+autocmd FocusLost * silent! wa  " write files on defocus
+set autoread                    " re-read files on focus
+
+set showcmd                           " display incomplete commands
 set wildmode=list:longest,list:full   " ex tab completion
 set wildignore+=*.o,*.obj,*.rbc,.git  ",vendor/ruby/**,node_modules/**
 
-let mapleader=","
+let mapleader = ','
 
-let g:ctrlp_custom_ignore='vendor/ruby\|node_modules|tmp'
-let g:yankring_history_dir = '$HOME/.vim/tmp'
+let g:netrw_altv = 'spl'
+let g:ctrlp_custom_ignore = 'vendor/ruby\|node_modules|tmp'
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " My own oft used keys
-nnoremap <Leader>a :Ack<space>
 nnoremap <Leader>t :CtrlP<CR>
 nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>n :w<CR>:cn<CR>
 nnoremap <Leader>p :w<CR>:cN<CR>
 
+" cmd-][ indents lines in visual mode
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-" Remap some keys for ex mode
+" Make ex mode more OSX/emacs-y
 cnoremap <C-A> <Home>
 cnoremap <C-D> <Del>
 cnoremap <M-B> <S-Left>
 cnoremap <M-F> <S-Right>
 cnoremap <M-BS> <C-W>
 
-" Repetitive changes
-"   Ruby 1.8 -> 1.9 Hash Replacement
+" Macros:
+" Ruby 1.8 -> 1.9 Hash Replacement
 nnoremap <Leader>h :%s/\v:(\w+)\s?\=\>/\1:/g<CR>
 
 if &t_Co > 16 || has("gui_running")
@@ -91,7 +95,7 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
+" Create missing parent directories when saving new files
 autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
 
 " Auto-open quickfix window after any grep
