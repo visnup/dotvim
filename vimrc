@@ -23,6 +23,7 @@ set smartcase       " ...unless query has uppercase in it
 set hlsearch        " highlight search terms
 
 set splitright      " split things to the right
+set splitbelow      " split things to the bottom
 let g:netrw_altv = 2
 
 autocmd FocusLost * silent! wa        " write files on defocus
