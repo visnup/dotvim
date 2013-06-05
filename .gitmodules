@@ -31,3 +31,6 @@
 [submodule "bundle/vim-handlebars"]
 	path = bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = https://github.com/slim-template/vim-slim.git
