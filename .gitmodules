@@ -19,9 +19,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen/
-[submodule "bundle/vim-slim"]
-	path = bundle/vim-slim
-	url = https://github.com/bbommarito/vim-slim
 [submodule "bundle/vim-stylus"]
 	path = bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus
