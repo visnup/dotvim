@@ -87,6 +87,7 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd BufNewFile,BufRead *.skim set filetype=slim
 autocmd BufNewFile,BufRead *.emblem set filetype=jade
 autocmd BufNewFile,BufRead *.styl.* set filetype=stylus
+autocmd BufNewFile,BufRead *.less set filetype=scss
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
