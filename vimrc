@@ -65,14 +65,6 @@ if &t_Co > 16 || has("gui_running")
   colorscheme xoria256
 endif
 
-if has("gui_running")
-  set lines=48 columns=80
-  set guifont=Inconsolata:h16.00
-  set transparency=5
-  set toolbar=icons,text
-  set guioptions-=T
-endif
-
 " Setup for multibyte
 if has("multi_byte")
   set fileencodings=ucs-bom,utf-8
@@ -89,7 +81,7 @@ autocmd BufNewFile,BufRead *.emblem set filetype=jade
 autocmd BufNewFile,BufRead *.styl.* set filetype=stylus
 autocmd BufNewFile,BufRead *.less set filetype=scss
 
-" For all text files set 'textwidth' to 78 characters.
+" Filetype specific changes
 autocmd FileType text setlocal textwidth=78
 
 " When editing a file, always jump to the last known cursor position.
@@ -105,3 +97,12 @@ autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%
 
 " Auto-open quickfix window after any grep
 autocmd QuickFixCmdPost *grep* cwindow
+
+if has("gui_running")
+  set lines=48 columns=80
+  set guifont=Inconsolata:h16.00
+  set transparency=5
+  set toolbar=icons,text
+  set guioptions-=T
+  set noballooneval
+endif
