@@ -42,6 +42,7 @@ map Q gq
 
 " My own oft used keys
 nnoremap <Leader>t :CtrlP<CR>
+nnoremap <Leader>g :grep 
 nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>n :w<CR>:cn<CR>
 nnoremap <Leader>p :w<CR>:cN<CR>
@@ -105,4 +106,12 @@ if has("gui_running")
   set toolbar=icons,text
   set guioptions-=T
   set noballooneval
+endif
+
+" Replace searching with the silver searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching=0
 endif
