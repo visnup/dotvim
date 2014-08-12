@@ -105,7 +105,6 @@ if has("gui_running")
   set transparency=5
   set toolbar=icons,text
   set guioptions-=T
-  set noballooneval
 endif
 
 " Replace searching with the silver searcher
