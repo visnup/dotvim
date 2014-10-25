@@ -102,7 +102,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 if has("gui_running")
   set lines=48 columns=80
   set guifont=Inconsolata:h18.00
-  set transparency=5
+  set transparency=15
   set toolbar=icons,text
   set guioptions-=T
 endif
