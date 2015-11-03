@@ -81,6 +81,7 @@ autocmd BufNewFile,BufRead *.skim set filetype=slim
 autocmd BufNewFile,BufRead *.emblem set filetype=jade
 autocmd BufNewFile,BufRead *.styl.* set filetype=stylus
 autocmd BufNewFile,BufRead *.less set filetype=scss
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Filetype specific changes
 autocmd FileType text setlocal textwidth=78
