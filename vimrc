@@ -109,7 +109,8 @@ endif
 
 " Replace searching with the silver searcher
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>
   let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching=0
