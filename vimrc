@@ -47,6 +47,9 @@ nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>n :w<CR>:cn<CR>
 nnoremap <Leader>p :w<CR>:cN<CR>
 
+" gp visually selects the last pasted text
+nnoremap gp `[v`]
+
 " cmd-][ indents lines in visual mode
 vmap <D-[> <gv
 vmap <D-]> >gv
