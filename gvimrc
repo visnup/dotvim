@@ -11,4 +11,8 @@ if has("gui_macvim")
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
+
+  " Fira Code
+  set macligatures
+  set guifont=Fira\ Code:h15
 endif
