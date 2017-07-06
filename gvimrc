@@ -15,4 +15,7 @@ if has("gui_macvim")
   " Fira Code
   set macligatures
   set guifont=Fira\ Code:h15
+
+  " transparency blur
+  set blurradius=20
 endif
