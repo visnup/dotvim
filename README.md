@@ -2,7 +2,7 @@ Installation
 ============
 
 ~~~sh
-git clone git@github.com:visnup/dotvim.git ~/.vim
+git clone https://github.com/visnup/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 cd ~/.vim
