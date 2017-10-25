@@ -24,7 +24,9 @@ set hlsearch        " highlight search terms
 
 set splitright      " split things to the right
 set splitbelow      " split things to the bottom
+
 let g:netrw_altv=2
+let g:jsx_ext_required = 0
 
 autocmd FocusLost * silent! wa        " write files on defocus
 set autoread                          " re-read files on focus
